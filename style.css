@@ -1,0 +1,305 @@
+/* Reset básico para garantir que o banner e o menu encostem nas bordas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Imagem do Topo em Segundo Plano (Atrás do Carrossel) */
+.banner-topo {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    background-image: url('img/banner-topo.jpg'); /* Ajuste o nome e a pasta aqui */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Container do Carrossel em Primeiro Plano (Na frente da imagem) */
+.carrossel-container {
+    position: relative;
+    z-index: 2; /* Camada da frente */
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+/* Estilo de cada Slide de Produto */
+.slide-produto {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    animation: deslizarEntrada 0.6s ease-out;
+}
+
+.slide-produto.ativo {
+    display: flex;
+}
+
+@keyframes deslizarEntrada {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Foto do Produto no Carrossel */
+.foto-produto {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Caixa de Informações e Preço do Produto */
+.info-produto {
+    background-color: rgba(15, 23, 42, 0.88);
+    padding: 22px 28px;
+    border-radius: 14px;
+    border-left: 5px solid #f97316;
+    color: #ffffff;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.etiqueta-oferta {
+    display: inline-block;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.info-produto h2 {
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.info-produto .preco {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 14px;
+}
+
+.btn-orcamento {
+    display: inline-block;
+    background-color: #22c55e;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-orcamento:hover {
+    background-color: #16a34a;
+}
+
+/* Setas laterais do carrossel */
+.seta-carrossel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    border: none;
+    font-size: 22px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 3;
+}
+
+.seta-carrossel:hover {
+    background-color: #f97316;
+}
+
+.seta-carrossel.anterior {
+    left: 10px;
+}
+
+.seta-carrossel.proximo {
+    right: 10px;
+}
+
+/* ================= MENU PRINCIPAL ================= */
+.navbar-construcao {
+    width: 100%;
+    background-color: #1e293b;
+    border-bottom: 4px solid #f97316;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-principal {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.menu-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #334155;
+}
+
+.menu-item:last-child {
+    border-right: none;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 14px 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item:hover .menu-link {
+    background-color: #f97316;
+    color: #ffffff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #ffffff;
+    list-style: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-top: 3px solid #f97316;
+    z-index: 1000;
+    text-align: left;
+}
+
+.menu-item:last-child .submenu {
+    left: auto;
+    right: 0;
+}
+
+.submenu li {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu a {
+    display: block;
+    padding: 12px 15px;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background-color 0.2s, padding-left 0.2s;
+}
+
+.submenu a:hover {
+    background-color: #fff7ed;
+    color: #ea580c;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Responsividade para celulares e tablets */
+@media (max-width: 992px) {
+    .banner-topo {
+        height: auto;
+        padding: 25px 0;
+    }
+
+    .slide-produto {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .foto-produto {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-produto h2 {
+        font-size: 18px;
+    }
+
+    .info-produto .preco {
+        font-size: 26px;
+    }
+
+    .menu-principal {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        border-right: none;
+        border-bottom: 1px solid #334155;
+        text-align: left;
+    }
+
+    .menu-link {
+        justify-content: flex-start;
+        padding: 15px 20px;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: #0f172a;
+        border-top: none;
+    }
+
+    .submenu a {
+        color: #cbd5e1;
+        padding-left: 35px;
+    }
+
+    .submenu a:hover {
+        background-color: #1e293b;
+        color: #f97316;
+        padding-left: 40px;
+    }
+}

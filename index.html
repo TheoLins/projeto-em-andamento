@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Pedro - Materiais para Construção</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- INÍCIO DO BANNER DO TOPO COM CARROSSEL SOBREPOSTO -->
+    <header class="banner-topo">
+        <!-- Imagem de fundo em segundo plano (Certifique-se que o caminho/nome está correto) -->
+        <img src="img/baner-topo.jpg" class="banner-fundo">
+
+        <!-- Área dos Produtos que passam por cima do topo -->
+        <div class="carrossel-container">
+            
+            <!-- Produto 1 -->
+            <div class="slide-produto ativo">
+                <img src="img/bacia_caixa_acoplada_lorenzet_01.JPG" alt="Bacia Caixa Acoplada" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">OFERTA ESPECIAL</span>
+                    <h2>Bacia Caixa Acoplada One Branca Lorenzetti</h2>
+                    <p class="preco">R$ 499,90</p>
+            </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="slide-produto">
+                <img src="img/bella_ducha_4t_220v_6800w.jpeg" alt="Bella Ducha 4T Lorenzetti" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">BANHO E AQUECIMENTO</span>
+                    <h2>Ducha 4T Bella Ducha 220V 6800W Lorenzetti</h2>
+                    <p class="preco">R$ 104,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="slide-produto">
+                <img src="img/carrinho_de_mao_tramontina_sinza.jpg" alt="Carrinho de Mão Tramontina" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">FERRAMENTAS</span>
+                    <h2>Carrinho de Mão Cinza Tramontina</h2>
+                    <p class="preco">R$ 499,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="slide-produto">
+                <img src="img/carrinho_de_mao_vermelho.jpg" alt="Carrinho de Mão Vermelho" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">OBRA PESADA</span>
+                    <h2>Carrinho de Mão Vermelho Reforçado</h2>
+                    <p class="preco">R$ 149,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="slide-produto">
+                <img src="img/cimento_cp2_50kg_supremo.JPG" alt="Cimento CP2 50kg Supremo" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">OBRA CINZA</span>
+                    <h2>Cimento CP2 50kg Supremo</h2>
+                    <p class="preco">R$ 36,99</p>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="slide-produto">
+                <img src="img/cimento_cp2_50kg_votoram.jpg" alt="Cimento CP2 50kg Votoran" class="foto-produto">
+                <div class="info-produto">
+                    <span class="etiqueta-oferta">TODAS AS OBRAS</span>
+                    <h2>Cimento CP2 50kg Votoran</h2>
+                    <p class="preco">R$ 38,99</p>
+                </div>
+            </div>
+
+            <!-- Botões manuais de avançar e voltar -->
+            <button class="seta-carrossel anterior" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="seta-carrossel proximo" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </header>
+    <!-- FIM DO BANNER DO TOPO -->
+
+    <!-- INÍCIO DO MENU -->
+    <nav class="navbar-construcao">
+        <ul class="menu-principal">
+            <li class="menu-item">
+                <a href="#" class="menu-link">Infraestrutura e Fundação ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Cimentos e Argamassas</a></li>
+                    <li><a href="#">Areia, Pedra e Brita</a></li>
+                    <li><a href="#">Ferro, Vergalhões e Malhas</a></li>
+                    <li><a href="#">Madeiras para Caixaria</a></li>
+                    <li><a href="#">Arames e Pregos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Supraestrutura ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Colunas e Vigas Prontas</a></li>
+                    <li><a href="#">Lajes e Treliças</a></li>
+                    <li><a href="#">Escoras e Formas</a></li>
+                    <li><a href="#">Aditivos para Concreto</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Fechamento ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Blocos de Concreto</a></li>
+                    <li><a href="#">Tijolos Cerâmicos e Baianos</a></li>
+                    <li><a href="#">Drywall e Chapas de Gesso</a></li>
+                    <li><a href="#">Telhas e Madeiramento</a></li>
+                    <li><a href="#">Portas e Janelas</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Tubos de Esgoto ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Tubos PVC Esgoto (Tigre)</a></li>
+                    <li><a href="#">Conexões, Joelhos e Tês</a></li>
+                    <li><a href="#">Caixas Sifonadas e Ralos</a></li>
+                    <li><a href="#">Caixas de Gordura e Inspeção</a></li>
+                    <li><a href="#">Anéis de Vedação e Adesivos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Tubos de Esgoto e Água ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Tubos Soldáveis (Água Fria)</a></li>
+                    <li><a href="#">Tubos PPR e CPVC (Água Quente)</a></li>
+                    <li><a href="#">Caixas d'Água e Cisternas</a></li>
+                    <li><a href="#">Registros, Torneiras e Válvulas</a></li>
+                    <li><a href="#">Fitas Veda Rosca e Reparos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Impermeabilizantes ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Mantas Asfálticas e Líquidas</a></li>
+                    <li><a href="#">Impermeabilizantes para Fundação</a></li>
+                    <li><a href="#">Selantes, Silicones e PU</a></li>
+                    <li><a href="#">Fitas Multiuso Vedatudo</a></li>
+                    <li><a href="#">Aditivos Impermeabilizantes</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Revestimentos Brutos ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Cal Hidratada e Virgem</a></li>
+                    <li><a href="#">Massa Pronta (Chapisco/Reboco)</a></li>
+                    <li><a href="#">Telas para Fachada</a></li>
+                    <li><a href="#">Cantoneiras de Proteção</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Pisos e Acabamentos ▾</a>
+                <ul class="submenu">
+                    <li><a href="#">Pisos Cerâmicos e Porcelanatos</a></li>
+                    <li><a href="#">Argamassas (AC1, AC2, AC3)</a></li>
+                    <li><a href="#">Rejuntes e Espaçadores</a></li>
+                    <li><a href="#">Rodapés e Soleiras</a></li>
+                    <li><a href="#">Tintas e Ferramentas (Tramontina)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- FIM DO MENU -->
+
+    <!-- BARRA DE PESQUISA E VITRINE DO CATÁLOGO -->
+    <main>
+        <div style="padding: 20px 20px 0 20px; max-width: 600px; margin: 0 auto;">
+            <input type="text" id="searchInput" placeholder="Buscar produtos (ex: cimento, tubo, ducha)..." style="width: 100%; padding: 12px 16px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 15px;">
+        </div>
+        <div id="productsGrid"></div>
+    </main>
+
+    <!-- Arquivo JavaScript Unificado -->
+    <script src="script.js"></script>
+</body>
+</html>
