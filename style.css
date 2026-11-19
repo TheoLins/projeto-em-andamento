@@ -15,8 +15,8 @@ body {
     position: relative;
     width: 100%;
     height: 300px;
-    background-color: #ea580c; /* Cor laranja de apoio enquanto a imagem carrega */
-    background-image: url('img/banner_topo_fundo.jpg'); /* Confira o nome e a extensão exata da sua imagem */
+    background-color: #ea580c;
+    background-image: url('img/banner_topo_fundo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,6 @@ body {
     justify-content: space-between;
     padding: 14px 20px;
 }
-
 
 /* Vídeo MP4 em Segundo Plano */
 .video-fundo {
@@ -295,6 +294,7 @@ body {
     border-top: 3px solid #f97316;
     z-index: 1000;
     text-align: left;
+    overflow: visible;
 }
 
 .menu-item:last-child .submenu {
@@ -303,6 +303,7 @@ body {
 }
 
 .submenu li {
+    position: relative;
     border-bottom: 1px solid #e2e8f0;
 }
 
@@ -326,8 +327,69 @@ body {
     font-weight: bold;
 }
 
-.menu-item:hover .submenu {
+.menu-item:hover > .submenu {
     display: block;
+}
+
+/* ================= SUBMENU LATERAL ESQUERDO (3º NÍVEL) ================= */
+.submenu-item-lateral {
+    position: relative;
+}
+
+.submenu-lateral {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    right: auto;
+    min-width: 230px;
+    max-height: 420px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: -4px 8px 16px rgba(0, 0, 0, 0.22);
+    border-right: 3px solid #f97316; /* Borda laranja encostada no menu */
+    border-top: 1px solid #e2e8f0;
+    z-index: 9999;
+    text-align: left;
+}
+
+/* Mostra o submenu na lateral esquerda ao passar o mouse em Tubos PVC Esgoto */
+.submenu-item-lateral:hover > .submenu-lateral {
+    display: block;
+}
+
+.submenu-item-lateral:hover > a {
+    background-color: #fff7ed;
+    color: #ea580c;
+    font-weight: bold;
+}
+
+.submenu-lateral li {
+    list-style: none;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.submenu-lateral li:last-child {
+    border-bottom: none;
+}
+
+.submenu-lateral a {
+    display: block;
+    padding: 11px 15px;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.submenu-lateral a:hover {
+    background-color: #fff7ed;
+    color: #ea580c;
+    padding-left: 20px;
+    font-weight: bold;
 }
 
 /* ================= BARRA DE BUSCA E VITRINE ================= */
@@ -359,7 +421,7 @@ body {
     box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
 }
 
-/* Responsividade para celulares e tablets */
+/* ================= RESPONSIVIDADE PARA CELULARES E TABLETS ================= */
 @media (max-width: 992px) {
     .banner-topo {
         height: auto;
@@ -433,4 +495,11 @@ body {
         color: #f97316;
         padding-left: 40px;
     }
-}
+
+    .submenu-lateral {
+        position: static;
+        width: 100%;
+        max-height: none;
+        box-shadow: none;
+        border-right: none;
+    }
