@@ -14,7 +14,7 @@ body {
 .banner-topo {
     position: relative;
     width: 100%;
-    height: 375px;
+    height: 300px;
     background-color: #ea580c; /* Cor laranja de apoio enquanto a imagem carrega */
     background-image: url('img/banner_topo_fundo.jpg'); /* Confira o nome e a extensão exata da sua imagem */
     background-size: cover;
