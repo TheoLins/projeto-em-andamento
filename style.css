@@ -40,8 +40,9 @@
     display: none;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    width: 100%;
+    gap: 25px;
+    height: 60%;
+    width: 50%;
     animation: deslizarEntrada 0.6s ease-out;
 }
 
