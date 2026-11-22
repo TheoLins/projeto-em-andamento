@@ -145,16 +145,8 @@
                     <li class="submenu-item-lateral">
                         <a href="#">Tubos PVC Esgoto &#9656;</a>
                         <ul class="submenu-lateral">
-                            <li><a href="#">Tubo Esgoto 40mm(Tigre)</a></li>
-                            <li><a href="#">Tubo Esgoto 40mm(Krona)</a></li>
-                            <li><a href="#">Tubo Esgoto 50mm(Tigre)</a></li>
-                            <li><a href="#">Tubo Esgoto 50mm(Krona)</a></li>
-                            <li><a href="#">Tubo Esgoto 75mm(Tigre)</a></li>
-                            <li><a href="#">Tubo Esgoto 75mm(Krona)</a></li>
-                            <li><a href="#">Tubo Esgoto 100mm(Tigre)</a></li>
-                            <li><a href="#">Tubo Esgoto 100mm(Krona)</a></li>
-                            <li><a href="#">Tubo Esgoto 150mm(Tigre)</a></li>
-                            <li><a href="#">Tubo Esgoto 150mm(Krona)</a></li>
+                            <li><a href="#">Tigre</a></li>
+                            <li><a href="#">Krona</a></li>
                         </ul>
                     </li>
 
@@ -201,17 +193,10 @@
                 </ul>
             </li>
                         <li class="menu-item">
-                <a href="#" class="menu-link">Ferramentas Manuais & Elétricas▾</a>
+                <a href="#" class="menu-link">Ferramentas ▾</a>
                 <ul class="submenu">
-                    <li><a href="#">Chaves Boca Estria</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>               
+                    <li><a href="#"></a>Manuais</li>
+                    <li><a href="#"></a>Elétricas</li>            
                 </ul>
             </li>
         </ul>
@@ -225,7 +210,17 @@
         </div>
         <div id="productsGrid"></div>
     </main>
+<main class="conteudo-principal">
+    <div class="barra-busca-container">
+        <input type="text" id="searchInput" placeholder="Buscar produtos (ex: cimento, tubo, ducha)...">
+    </div>
 
+    <!-- Iframe onde os links do menu vão abrir -->
+    <iframe name="conteudo-frame" id="conteudoFrame" class="iframe-conteudo"></iframe>
+
+    <!-- Sua vitrine atual -->
+    <div id="productsGrid"></div>
+</main>
     <!-- Arquivo JavaScript Unificado -->
     <script src="script.js"></script>
 </body>
