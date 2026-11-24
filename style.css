@@ -503,3 +503,25 @@ body {
         box-shadow: none;
         border-right: none;
     }
+    /* ================= IFRAME DE CONTEÚDO ================= */
+main {
+    width: 100%;
+    max-width: 100%;
+    display: block; /* Garante que os elementos internos ocupem a linha inteira */
+}
+
+.iframe-conteudo {
+    display: none;
+    width: 100% !important;
+    min-width: 100%;
+    height: 100vh;
+    border: none !important;
+    background-color: transparent;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.iframe-conteudo.ativo {
+    display: block !important;
+}
+}
