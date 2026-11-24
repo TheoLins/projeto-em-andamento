@@ -127,4 +127,33 @@ if (searchInput) {
 document.addEventListener('DOMContentLoaded', () => {
     iniciarCarrossel();
     renderGrid(listaProdutos);
+
 });
+
+// ================= CONTROLE DO IFRAME PELO MENU =================
+document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('conteudoFrame');
+    const vitrine = document.getElementById('productsGrid');
+    const barraBusca = document.querySelector('.barra-busca-container');
+    
+    // Seleciona todos os links dentro dos submenus
+    const linksMenu = document.querySelectorAll('.submenu a, .submenu-lateral a');
+
+    linksMenu.forEach(link => {
+        // Garante que todo link do menu aponte para o iframe
+        link.setAttribute('target', 'conteudo-frame');
+
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // Só ativa se o link tiver uma página válida (ignora links vazios com "#")
+            if (href && href !== '#') {
+                if (iframe) iframe.classList.add('ativo');
+                if (vitrine) vitrine.style.display = 'none';
+                // Opcional: esconde a barra de busca da página inicial ao abrir uma categoria
+                if (barraBusca) barraBusca.style.display = 'none';
+            }
+        });
+    });
+});
+
