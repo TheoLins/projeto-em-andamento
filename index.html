@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>São Pedro - Materiais para Construção</title>
+        <!-- 1. ADICIONE ESTA LINHA PARA OS ÍCONES APARECEREM -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -103,8 +105,77 @@
             </div>
         </div>
     </header>
+<section class="categorias-flutuantes-container"></section>
+<!-- AQUI TERMINA O SEU BANNER DO TOPO (COM OS BOTÕES LOJA 1, LOJA 2...) -->
 
-    <!-- MENU PRINCIPAL -->
+<!-- ===================================================================== -->
+<!-- COLE OS ÍCONES AQUI (ACIMA DA BARRA DE MENUS)                          -->
+<!-- ===================================================================== -->
+<section class="categorias-flutuantes-container">
+    <div class="categorias-track">
+        
+        <a href="#cozinha" class="categoria-card" data-categoria="cozinha">
+            <div class="icone-box">
+            <img src="img/iconecozinha.png" alt="cozinha">
+            <i class="fa-solid fa-kitchen-set"></i></div>
+            <span>Para Sua Cozinha</span>
+        </a>
+
+        <a href="#sala" class="categoria-card" data-categoria="sala">
+            <div class="icone-box"><i class="fa-solid fa-couch"></i></div>
+            <span>Para Sua Sala</span>
+        </a>
+
+        <a href="#quarto-casal" class="categoria-card" data-categoria="quarto-casal">
+            <div class="icone-box"><i class="fa-solid fa-bed"></i></div>
+            <span>Para Seu Quarto De Casal</span>
+        </a>
+
+        <a href="#quarto-filha" class="categoria-card" data-categoria="quarto-filha">
+            <div class="icone-box"><i class="fa-solid fa-child-dress"></i></div>
+            <span>Para O Quarto De Sua Filha</span>
+        </a>
+
+        <a href="#quarto-filho" class="categoria-card" data-categoria="quarto-filho">
+            <div class="icone-box"><i class="fa-solid fa-child"></i></div>
+            <span>Para O Quarto De Seu Filho</span>
+        </a>
+
+        <a href="#banheiro" class="categoria-card" data-categoria="banheiro">
+            <div class="icone-box"><i class="fa-solid fa-shower"></i></div>
+            <span>Para Seu Banheiro</span>
+        </a>
+
+        <a href="#alicerce" class="categoria-card" data-categoria="alicerce">
+            <div class="icone-box"><i class="fa-solid fa-trowel-bricks"></i></div>
+            <span>Para Alicerce e Vigas de Concreto</span>
+        </a>
+
+        <a href="#laje" class="categoria-card" data-categoria="laje">
+            <div class="icone-box"><i class="fa-solid fa-layer-group"></i></div>
+            <span>Para Sua Laje</span>
+        </a>
+
+        <a href="#telhado" class="categoria-card" data-categoria="telhado">
+            <div class="icone-box"><i class="fa-solid fa-house-chimney"></i></div>
+            <span>Para Seu Telhado</span>
+        </a>
+
+        <a href="#encanamento" class="categoria-card" data-categoria="encanamento">
+            <div class="icone-box"><i class="fa-solid fa-faucet-drip"></i></div>
+            <span>Para Encanamento</span>
+        </a>
+
+        <a href="#eletrica" class="categoria-card" data-categoria="eletrica">
+            <div class="icone-box"><i class="fa-solid fa-bolt"></i></div>
+            <span>Para Parte Elétrica</span>
+        </a>
+
+    </div>
+</section>
+
+<!-- AQUI COMEÇA A SUA BARRA DE MENUS ESCURA (Fundação, Supraestrutura...) -->
+<!-- MENU PRINCIPAL -->
     <nav class="navbar-construcao">
         <ul class="menu-principal">
            <li class="menu-item">
@@ -216,9 +287,9 @@
             </li>
         </ul>
     </nav>
-    <!-- FIM DO MENU -->
+<!-- FIM DO MENU -->
 
-    <!-- BARRA DE PESQUISA E VITRINE DO CATÁLOGO -->
+<!-- BARRA DE PESQUISA E VITRINE DO CATÁLOGO -->
     <main>
         <div style="padding: 20px 20px 0 20px; max-width: 600px; margin: 0 auto;">
             <input type="text" id="searchInput" placeholder="Buscar produtos (ex: cimento, tubo, ducha)..." style="width: 100%; padding: 12px 16px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 15px;">
