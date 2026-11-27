@@ -116,6 +116,9 @@ function renderGrid(produtos) {
 
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
+        // Limpa seleção dos ícones ao digitar na busca manualmente
+        document.querySelectorAll('.categoria-card').forEach(c => c.classList.remove('ativo'));
+
         const term = e.target.value.toLowerCase();
         const filtered = listaProdutos.filter(item => 
             item.nome.toLowerCase().includes(term)
@@ -124,17 +127,61 @@ if (searchInput) {
     });
 }
 
+// ================= INICIALIZAÇÃO E ÍCONES FLUTUANTES =================
 document.addEventListener('DOMContentLoaded', () => {
     iniciarCarrossel();
     renderGrid(listaProdutos);
 
-});
+    // Mapeamento de palavras-chave para filtrar produtos por ícone
+    const filtrosPorCategoria = {
+        'cozinha': ['torneira', 'tubo', 'sifao', 'pia', 'lampada'],
+        'sala': ['lampada', 'abajur', 'antena', 'tinta', 'piso'],
+        'quarto-casal': ['abajur', 'lampada', 'tomada', 'interruptor'],
+        'quarto-filha': ['abajur', 'lampada', 'tomada', 'tinta'],
+        'quarto-filho': ['abajur', 'lampada', 'tomada', 'tinta'],
+        'banheiro': ['ducha', 'assento', 'bacia', 'tubo', 'esgoto'],
+        'alicerce': ['cimento', 'carrinho', 'ferro', 'disco'],
+        'laje': ['cimento', 'carrinho', 'tubo', 'conduite', 'abracadeira'],
+        'telhado': ['telha', 'calha', 'abracadeira', 'cinta'],
+        'encanamento': ['tubo', 'soldavel', 'esgoto', 'tigre', 'krona', 'alicate', 'abracadeira'],
+        'eletrica': ['lampada', '220v', 'abajur', 'abracadeira', 'nylon', 'antena']
+    };
 
-// ================= CONTROLE DO IFRAME PELO MENU =================
-document.addEventListener('DOMContentLoaded', () => {
+    const cardsCategoria = document.querySelectorAll('.categoria-card');
+
+    cardsCategoria.forEach(card => {
+        card.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita o salto da página pelo "#"
+
+            const jaEstavaAtivo = card.classList.contains('ativo');
+            cardsCategoria.forEach(c => c.classList.remove('ativo'));
+
+            if (searchInput) searchInput.value = '';
+
+            // Se clicar no mesmo ícone ativo, desmarca e mostra todos os produtos novamente
+            if (jaEstavaAtivo) {
+                renderGrid(listaProdutos);
+                return;
+            }
+
+            card.classList.add('ativo');
+            const categoria = card.getAttribute('data-categoria');
+            const palavrasChave = filtrosPorCategoria[categoria] || [];
+
+            const produtosFiltrados = listaProdutos.filter(item => {
+                const nomeMinusculo = item.nome.toLowerCase();
+                return palavrasChave.some(palavra => nomeMinusculo.includes(palavra));
+            });
+
+            renderGrid(produtosFiltrados);
+        });
+    });
+
+    // ================= CONTROLE DO IFRAME PELO MENU =================
     const iframe = document.getElementById('conteudoFrame');
     const vitrine = document.getElementById('productsGrid');
     const barraBusca = document.querySelector('.barra-busca-container');
+    const barraCategorias = document.querySelector('.categorias-flutuantes-container');
     
     // Seleciona todos os links dentro dos submenus
     const linksMenu = document.querySelectorAll('.submenu a, .submenu-lateral a');
@@ -150,10 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (href && href !== '#') {
                 if (iframe) iframe.classList.add('ativo');
                 if (vitrine) vitrine.style.display = 'none';
-                // Opcional: esconde a barra de busca da página inicial ao abrir uma categoria
                 if (barraBusca) barraBusca.style.display = 'none';
+                if (barraCategorias) barraCategorias.style.display = 'none';
             }
         });
     });
 });
-
